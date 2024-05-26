@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "741299483442",
+    "project_id": "jobharbor2",
+    "storage_bucket": "jobharbor2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741299483442:android:0fd0025bbd5bbf1a591d2b",
+        "android_client_info": {
+          "package_name": "com.miguel.jobharbor2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAveqelqXGXQzRzphj3fdq1BhZL3ERn-0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/notasFragmento">
+    <fragment
+        android:id="@+id/notasFragmento"
+        android:name="com.miguel.jobharbor2.iu.notasFragmento"
+        android:label="Notas"
+        tools:layout="@layout/fragment_notas">
+        <action
+            android:id="@+id/action_notasFragmento_to_EditarNotas"
+            app:destination="@id/EditarNotas" />
+    </fragment>
+
+    <fragment
+
+        android:id="@+id/EditarNotas"
+        android:name="com.miguel.jobharbor2.iu.editarNotas"
+        android:label="Editar/Añadir"
+        tools:layout="@layout/fragment_editar_notas">
+
+        <argument
+            android:name="notas"
+            app:argType="com.miguel.jobharbor2.data.entity.Notas"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_EditarNotas_to_notasFragmento"
+            app:destination="@id/notasFragmento" />
+    </fragment>
+
+
+</navigation>
