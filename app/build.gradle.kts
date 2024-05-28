@@ -75,6 +75,8 @@ dependencies {
     implementation("com.google.firebase:firebase-database:19.7.0")
     implementation(libs.firebase.database)
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+
 
 
 
