@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JobHarbor2"
+rootProject.name = "JobHarbor"
 include(":app")
  

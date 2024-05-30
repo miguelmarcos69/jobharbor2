@@ -35,6 +35,8 @@ class login : AppCompatActivity() {
         Log.i("MyActivity", "registrarse")
         Log.i("MyActivity", emailEditText.text.toString())
         Log.i("MyActivity", PasswordEditText.text.toString())
+
+
         signUpButton.setOnClickListener {
             Log.i("MyActivity", "registrarse")
             if (emailEditText.text.isNotEmpty() && PasswordEditText.text.isNotEmpty()) {
@@ -45,6 +47,8 @@ class login : AppCompatActivity() {
                 ).addOnCompleteListener {
                     if (it.isSuccessful) {
                         //si es correcto, cambia a home
+
+
                         showHome(it.result?.user?.email ?: "", MainActivity.ProviderType.BASIC)
                     } else {
                         //sino, muestra una Alerta
@@ -54,9 +58,11 @@ class login : AppCompatActivity() {
                 }
             }
         }
+
         val loginButton: Button = findViewById(R.id.loginButton);
         //Accede a home, introduciendo los datos
         loginButton.setOnClickListener {
+
             Log.i("MyActivity", "acceder")
             if (emailEditText.text.isNotEmpty() && PasswordEditText.text.isNotEmpty()) {
                 //Comprueba usuario y contraseña
@@ -78,7 +84,6 @@ class login : AppCompatActivity() {
     }
 
 
-
     private fun showAlert() {
 
         val builder = AlertDialog.Builder(this)
@@ -96,9 +101,8 @@ class login : AppCompatActivity() {
             putExtra("provider", provider.name)
         }
 
-
+//**Aqui hacer busqueda en la BD**/
         startActivity(homeIntent)
-
 
 
     }
