@@ -15,7 +15,6 @@
     </fragment>
 
     <fragment
-
         android:id="@+id/EditarNotas"
         android:name="com.miguel.jobharbor2.iu.editarNotas"
         android:label="Editar/Añadir"
@@ -30,5 +29,11 @@
             app:destination="@id/notasFragmento" />
     </fragment>
 
+    <fragment
+        android:id="@+id/usuarioFragmento"
+        android:name="com.miguel.jobharbor2.iu.UsuarioFragmento"
+        android:label="Usuario"
+        tools:layout="@layout/fragment_usuario">
 
+    </fragment>
 </navigation>

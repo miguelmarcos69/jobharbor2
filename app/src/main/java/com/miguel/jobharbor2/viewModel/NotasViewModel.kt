@@ -24,26 +24,26 @@ class NotasViewModel : ViewModel() {
     val notesChannel = Channel<NotesEvent>()
     val notesEvent = notesChannel.receiveAsFlow()
 
-        fun insert(nota: Notas) = viewModelScope.launch {
-            Log.i("MyActivity", "NotasViewModel")
-            BD.insert(nota)
-        }
-
-
-        fun update(nota: Notas) = viewModelScope.launch {
-            BD.update(nota)
-        }
-
-
-        fun delete(nota: Notas) = viewModelScope.launch {
-            BD.delete(nota)
-        }
-
-
-        sealed class NotesEvent {
-            data class ShowUndoSnackBar(val msg: String, val note: Notas) : NotesEvent()
-            object NavigateToNotesFragment : NotesEvent()
-        }
-
-
+    fun insert(nota: Notas) = viewModelScope.launch {
+        Log.i("MyActivity", "NotasViewModel")
+        BD.insert(nota)
     }
+
+
+    fun update(nota: Notas) = viewModelScope.launch {
+        BD.update(nota)
+    }
+
+
+    fun delete(nota: Notas) = viewModelScope.launch {
+        BD.delete(nota)
+    }
+
+
+    sealed class NotesEvent {
+        data class ShowUndoSnackBar(val msg: String, val note: Notas) : NotesEvent()
+        object NavigateToNotesFragment : NotesEvent()
+    }
+
+
+}

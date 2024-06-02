@@ -28,7 +28,7 @@ class notasFragmento : Fragment(R.layout.fragment_notas), NotasAdaptador.OnNoteC
         val binding = FragmentNotasBinding.bind(requireView())
         Log.i("MyActivity", "entro")
         binding.apply {
-
+//Genera la lista de notas
             recyclerViewNotas.layoutManager = GridLayoutManager(context, 2)
             recyclerViewNotas.setHasFixedSize(true)
 

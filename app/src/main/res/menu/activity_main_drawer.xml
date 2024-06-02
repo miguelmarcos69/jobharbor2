@@ -7,7 +7,10 @@
         <item
             android:id="@+id/notasFragmento"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-
+            android:title="@string/notas" />
+        <item
+            android:id="@+id/usuarioFragmento"
+            android:icon="@drawable/side_nav_bar"
+            android:title="@string/datos_usuario" />
     </group>
 </menu>

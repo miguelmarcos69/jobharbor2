@@ -55,28 +55,16 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.notasFragmento
+                R.id.notasFragmento, R.id.usuarioFragmento
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        /*
-        enableEdgeToEdge()
 
-        setContentView(R.layout.activity_main)
-
-        val navHotFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
-        navController = navHotFragment.navController
-
-        setupActionBarWithNavController(navController)*/
 
     }
-/*
-    override fun onSupportNavigateUp(): Boolean {
-        return super.onSupportNavigateUp() || navController.navigateUp()
-    }*/
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
