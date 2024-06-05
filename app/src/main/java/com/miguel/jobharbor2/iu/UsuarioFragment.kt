@@ -63,7 +63,7 @@ class UsuarioFragmento : Fragment(R.layout.fragment_usuario) {
 
             Log.i("usuario cargado", nuevoUsu.toString())
             viewLifecycleOwner.lifecycleScope.launch {
-
+                viewModel.guardaUsu(requireContext(), listOf(nuevoUsu))
                 viewModel.update(nuevoUsu)
                 viewModel.usuario = nuevoUsu
                 Log.i("usuario", viewModel.usuario!!.nombre.toString())

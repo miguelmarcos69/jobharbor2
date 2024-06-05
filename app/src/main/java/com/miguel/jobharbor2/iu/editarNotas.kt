@@ -5,9 +5,15 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.ktx.messaging
+import com.miguel.jobharbor2.Notificaciones
 
 import com.miguel.jobharbor2.R
 import com.miguel.jobharbor2.data.entity.Notas
@@ -29,6 +35,8 @@ class editarNotas : Fragment(R.layout.fragment_editar_notas) {
         val args: editarNotasArgs by navArgs()
         val note = args.notas
 
+
+
         if (note !== null) {
             Log.i("MyActivity", "Modificar contenido")
             Log.i("MyActivity", note.toString())
@@ -49,6 +57,7 @@ class editarNotas : Fragment(R.layout.fragment_editar_notas) {
                         try {
                             Log.i("MyActivity", "Añadido")
                             viewModel.update(nuevanota)
+                            // Notificaciones.enviarNotificacionPush()
                             AlertDialog.Builder(it.context).setMessage("Nota actualizada")
                                 .setPositiveButton("OK", null).show()
 
@@ -95,6 +104,4 @@ class editarNotas : Fragment(R.layout.fragment_editar_notas) {
             .map { caracteresPermitidos.random() }
             .joinToString("")
     }
-
-
 }

@@ -46,6 +46,7 @@ class UsuarioViewModel : ViewModel() {
         val json = gson.toJson(user)
         editor.putString("user_key", json)
         editor.apply()
+
     }
 
     fun getUser(context: Context): List<Usuario>? {

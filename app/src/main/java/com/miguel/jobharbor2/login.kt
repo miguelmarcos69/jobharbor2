@@ -22,7 +22,6 @@ import com.miguel.jobharbor2.viewModel.UsuarioViewModel
 import kotlinx.coroutines.launch
 
 
-
 class login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +44,6 @@ class login : AppCompatActivity() {
         PasswordEditText.setText("00000000")
 
 
-
         title = "Autenticación"
 
 
@@ -54,6 +52,8 @@ class login : AppCompatActivity() {
         Log.i("MyActivity", "registrarse")
         Log.i("MyActivity", emailEditText.text.toString())
         Log.i("MyActivity", PasswordEditText.text.toString())
+
+
 
 
         signUpButton.setOnClickListener {
@@ -72,13 +72,20 @@ class login : AppCompatActivity() {
                             val id = viewModel.generarCadenaAleatoria().toInt()
                             val nombre = ""
                             val ape = ""
-                            val email =  emailEditText.text.toString()
+                            val email = emailEditText.text.toString()
                             val contra = PasswordEditText.text.toString()
                             val nuevoUsu = Usuario(id, nombre, ape, contra, email)
                             Log.i("usu", "Nuevo usuario: $nuevoUsu")
+
+
+
                             viewModel.guardaUsu(this@login, listOf(nuevoUsu))
                             viewModel.insert(nuevoUsu)
+
                         }
+
+
+
                         showHome(it.result?.user?.email ?: "", MainActivity.ProviderType.BASIC)
                     } else {
                         //sino, muestra una Alerta
@@ -108,9 +115,9 @@ class login : AppCompatActivity() {
                             var email = emailEditText.text.toString()
                             Log.i("Usu", "Login: ${emailEditText.text.toString()}")
 
+
                             viewModel.buscarUsu(email).collect() { n ->
 
-                                Log.i("usu", "USU recibidas: $n")
                                 viewModel.guardaUsu(this@login, n)
                                 showHome(
                                     it.result?.user?.email ?: "",
@@ -150,6 +157,7 @@ class login : AppCompatActivity() {
     }
 
     private fun showHome(email: String, provider: MainActivity.ProviderType) {
+
 
         val homeIntent = Intent(this, MainActivity::class.java).apply {
             putExtra("email", email)

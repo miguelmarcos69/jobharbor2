@@ -6,7 +6,6 @@ plugins {
     id("kotlin-parcelize")
 
 
-
 }
 
 android {
@@ -15,10 +14,10 @@ android {
 
     defaultConfig {
         applicationId = "com.miguel.jobharbor2"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -71,8 +70,10 @@ dependencies {
 
 
     implementation("com.google.firebase:firebase-analytics-ktx")
-
     implementation("com.google.firebase:firebase-database:19.7.0")
+    //implementation("com.google.firebase:firebase-messaging:22.0.0")
+    implementation("com.google.firebase:firebase-messaging")
+
     implementation(libs.firebase.database)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
@@ -80,6 +81,7 @@ dependencies {
 
 
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation(libs.androidx.datastore.core.android)
 
 
 

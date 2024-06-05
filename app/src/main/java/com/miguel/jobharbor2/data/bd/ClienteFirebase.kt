@@ -3,21 +3,28 @@ package com.miguel.jobharbor2.data.bd
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import android.widget.Toast
+import com.google.firebase.FirebaseOptions
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.database.ktx.database
 
+
 import com.miguel.jobharbor2.data.entity.Notas
 import com.miguel.jobharbor2.data.entity.Usuario
+
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
 import kotlinx.coroutines.suspendCancellableCoroutine
+
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
+
+
 
 class ClienteFirebase {
     private val database =
@@ -44,6 +51,7 @@ class ClienteFirebase {
                 }
             }
         }
+
     }
 
 
@@ -66,11 +74,15 @@ class ClienteFirebase {
             }
         }
     }
-    fun updateUsu(Nusu: Usuario){
+
+    fun updateUsu(Nusu: Usuario) {
 
 
         val updatedNota = mapOf<String, Any>(
-            "nombre" to Nusu.nombre, "ape" to Nusu.ape, "contra" to Nusu.contra, "email" to Nusu.email
+            "nombre" to Nusu.nombre,
+            "ape" to Nusu.ape,
+            "contra" to Nusu.contra,
+            "email" to Nusu.email
         )
 
         if (Nusu.ID != null) {
@@ -181,6 +193,4 @@ class ClienteFirebase {
             }
         }
     }
-
-
 }

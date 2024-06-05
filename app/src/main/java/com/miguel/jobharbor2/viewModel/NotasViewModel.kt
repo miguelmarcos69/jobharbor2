@@ -1,6 +1,7 @@
 package com.miguel.jobharbor2.viewModel
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.miguel.jobharbor2.data.bd.ClienteFirebase
@@ -23,6 +24,10 @@ class NotasViewModel : ViewModel() {
     val notas = BD.fetchNotas();
     val notesChannel = Channel<NotesEvent>()
     val notesEvent = notesChannel.receiveAsFlow()
+
+
+
+
 
     fun insert(nota: Notas) = viewModelScope.launch {
         Log.i("MyActivity", "NotasViewModel")
